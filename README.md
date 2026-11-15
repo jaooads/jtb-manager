@@ -36,6 +36,8 @@ Nunca use a chave `service_role` no frontend. A aplicação utiliza apenas a cha
 
 Em Settings > Secrets and variables > Actions > Variables, configure `VITE_SUPABASE_URL` e `VITE_SUPABASE_ANON_KEY`. Depois habilite GitHub Pages com source **GitHub Actions**. O workflow gera o `base path` automaticamente e usa `HashRouter` para evitar erros 404.
 
+Essas duas configurações são obrigatórias: o workflow interrompe o deploy quando as variáveis públicas não estão presentes, evitando publicar uma aplicação desconectada do Supabase.
+
 No Supabase, adicione a URL publicada e a variação terminada em `#/redefinir-senha` às Redirect URLs de Authentication.
 
 ## Marca
