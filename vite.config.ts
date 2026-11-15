@@ -30,6 +30,7 @@ export default defineConfig(({ mode }) => {
             react: ['react', 'react-dom', 'react-router-dom'],
             supabase: ['@supabase/supabase-js'],
             forms: ['react-hook-form', '@hookform/resolvers', 'zod'],
+            charts: ['recharts'],
           },
         },
       },

@@ -49,7 +49,7 @@ export function LoginPage() {
         <div className="mb-7 text-center">
           <img src={`${import.meta.env.BASE_URL}branding/daniel-muay-thai.png`} alt="Daniel Muay Thai" className="logo-glow mx-auto h-40 w-40 object-contain sm:h-48 sm:w-48" />
           <p className="mt-4 text-xs font-semibold uppercase tracking-[0.35em] text-gold-soft">Gestão da academia</p>
-          <h1 className="mt-2 text-2xl font-bold tracking-tight">Bem-vinda, Dani</h1>
+          <h1 className="mt-2 text-2xl font-bold tracking-tight">Bem-vindo, Dani</h1>
           <p className="mt-2 text-sm text-muted">Entre para cuidar da sua academia.</p>
         </div>
 

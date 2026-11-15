@@ -1,7 +1,8 @@
 import type { ReactNode } from 'react'
 import { NavLink } from 'react-router-dom'
-import { ChartNoAxesColumnIncreasing, CircleDollarSign, Dumbbell, Home, LogOut, Menu, Settings, Users } from 'lucide-react'
+import { ChartNoAxesColumnIncreasing, CircleDollarSign, Dumbbell, Home, LogOut, Medal, Menu, Users } from 'lucide-react'
 import { useAuth } from '../../features/auth/AuthProvider'
+import { FinancialBootstrap } from '../../features/payments/FinancialBootstrap'
 
 const nav = [
   { to: '/', label: 'Início', icon: Home, end: true },
@@ -14,6 +15,7 @@ export function AppShell({ children }: { children: ReactNode }) {
   const { signOut } = useAuth()
   return (
     <div className="app-bg min-h-dvh">
+      <FinancialBootstrap />
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-64 border-r border-white/8 bg-surface/95 p-5 backdrop-blur lg:flex lg:flex-col">
         <div className="mb-9 flex items-center gap-3">
           <img src={`${import.meta.env.BASE_URL}branding/daniel-muay-thai.png`} alt="" className="size-14 object-contain" />
@@ -21,8 +23,8 @@ export function AppShell({ children }: { children: ReactNode }) {
         </div>
         <nav className="space-y-2">
           {nav.slice(0, 3).map(({ to, label, icon: Icon, end }) => <NavLink key={to} to={to} end={end} className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition ${isActive ? 'bg-gold text-ink font-bold' : 'text-muted hover:bg-raised hover:text-copy'}`}><Icon className="size-5" />{label}</NavLink>)}
-          <NavLink to="/mais" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition ${isActive ? 'bg-gold text-ink font-bold' : 'text-muted hover:bg-raised hover:text-copy'}`}><Settings className="size-5" />Configurações</NavLink>
-          <span className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-zinc-600"><ChartNoAxesColumnIncreasing className="size-5" />Relatórios <small>em breve</small></span>
+          <NavLink to="/prajieds" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition ${isActive ? 'bg-gold text-ink font-bold' : 'text-muted hover:bg-raised hover:text-copy'}`}><Medal className="size-5" />Prajieds</NavLink>
+          <NavLink to="/relatorios" className={({ isActive }) => `flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition ${isActive ? 'bg-gold text-ink font-bold' : 'text-muted hover:bg-raised hover:text-copy'}`}><ChartNoAxesColumnIncreasing className="size-5" />Relatórios</NavLink>
         </nav>
         <button onClick={signOut} className="mt-auto flex items-center gap-3 rounded-xl px-4 py-3 text-sm text-muted hover:bg-raised hover:text-copy"><LogOut className="size-5" />Sair</button>
       </aside>
