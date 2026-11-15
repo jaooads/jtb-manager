@@ -32,7 +32,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       <div className="lg:pl-64">
         <header className="safe-top sticky top-0 z-20 border-b border-white/8 bg-ink/85 backdrop-blur-xl lg:hidden">
           <div className="flex h-17 items-center justify-between px-5">
-            <div className="flex items-center gap-3"><img src={`${import.meta.env.BASE_URL}branding/daniel-muay-thai.png`} alt="" className="size-11 object-contain" /><div><strong className="block text-sm">Daniel Muay Thai</strong><span className="text-xs text-muted">Olá, Dani!</span></div></div>
+            <div className="flex items-center gap-3"><img src={`${import.meta.env.BASE_URL}branding/daniel-muay-thai.png`} alt="" className="size-11 object-contain" /><div><strong className="block text-sm">Daniel Muay Thai</strong><span className="text-xs text-muted">Área administrativa</span></div></div>
             <Dumbbell className="size-5 text-gold" />
           </div>
         </header>

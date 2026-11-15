@@ -1,7 +1,7 @@
 -- Etapa 1: autorização exclusiva e perfil administrativo.
 create table if not exists public.admin_profiles (
   user_id uuid primary key references auth.users(id) on delete cascade,
-  display_name text not null default 'Dani' check (char_length(display_name) between 1 and 80),
+  display_name text not null default 'Administrador' check (char_length(display_name) between 1 and 80),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
 );

@@ -1,6 +1,6 @@
 -- Prajieds iniciais para a academia começar a usar sem configuração manual.
 -- A lista só é inserida quando ainda não existe nenhum Prajied, preservando
--- integralmente configurações que a Dani já tenha criado.
+-- integralmente configurações que o administrador já tenha criado.
 insert into public.graduations (
   name,
   primary_color,

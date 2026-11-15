@@ -48,16 +48,16 @@ export function LoginPage() {
       <div className="w-full max-w-[420px] animate-[fade-in_.55s_ease-out]">
         <div className="mb-7 text-center">
           <img src={`${import.meta.env.BASE_URL}branding/daniel-muay-thai.png`} alt="Daniel Muay Thai" className="logo-glow mx-auto h-40 w-40 object-contain sm:h-48 sm:w-48" />
-          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.35em] text-gold-soft">Gestão da academia</p>
-          <h1 className="mt-2 text-2xl font-bold tracking-tight">Bem-vindo, Dani</h1>
-          <p className="mt-2 text-sm text-muted">Entre para cuidar da sua academia.</p>
+          <p className="mt-4 text-xs font-semibold uppercase tracking-[0.35em] text-gold-soft">Acesso administrativo</p>
+          <h1 className="mt-2 text-2xl font-bold tracking-tight">Área restrita</h1>
+          <p className="mt-2 text-sm text-muted">Entre com suas credenciais para continuar.</p>
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="gold-border rounded-3xl bg-surface/90 p-5 shadow-2xl shadow-black/30 backdrop-blur sm:p-7">
           <label className="mb-5 block text-sm font-medium">E-mail
             <span className="relative mt-2 block">
               <Mail aria-hidden className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-muted" />
-              <input {...register('email')} type="email" inputMode="email" autoComplete="email" placeholder="dani@academia.com" className="h-13 w-full rounded-xl border border-white/10 bg-raised pl-12 pr-4 text-base placeholder:text-zinc-600 focus:border-gold/60" />
+              <input {...register('email')} type="email" inputMode="email" autoComplete="email" placeholder="E-mail de acesso" className="h-13 w-full rounded-xl border border-white/10 bg-raised pl-12 pr-4 text-base placeholder:text-zinc-600 focus:border-gold/60" />
             </span>
             {errors.email && <span className="mt-1 block text-xs text-red-400">{errors.email.message}</span>}
           </label>

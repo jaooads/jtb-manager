@@ -13,16 +13,16 @@ Aplicação mobile first para gestão da academia, construída com React, TypeSc
 ## Configuração segura do Supabase
 
 1. Em Authentication, desative novos cadastros públicos.
-2. Crie a usuária Dani manualmente com e-mail confirmado.
+2. Crie o usuário administrador manualmente com e-mail confirmado.
 3. Copie o UUID criado em Authentication > Users.
 4. No SQL Editor, execute:
 
 ```sql
 insert into public.admin_profiles (user_id, display_name)
-values ('UUID_DA_USUARIA', 'Dani');
+values ('UUID_DO_USUARIO', 'Administrador');
 ```
 
-Depois de autorizar a usuária, execute `202611150002_students_and_graduations.sql` para ativar os módulos de alunos e Prajieds e, em seguida, `202611150003_default_graduations.sql` para carregar os Prajieds iniciais. A carga inicial só acontece se a tabela estiver vazia e pode ser editada pela Dani.
+Depois de autorizar o usuário, execute `202611150002_students_and_graduations.sql` para ativar os módulos de alunos e Prajieds e, em seguida, `202611150003_default_graduations.sql` para carregar os Prajieds iniciais. A carga inicial só acontece se a tabela estiver vazia e pode ser editada pelo administrador.
 
 Execute depois `202611150004_financial.sql` para ativar configurações financeiras, primeira mensalidade, geração automática, pagamentos e auditoria.
 
