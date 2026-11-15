@@ -15,7 +15,7 @@ select
   defaults.sort_order,
   true
 from (values
-  ('Iniciante (sem Prajied)',         '#737373', null::text, 0),
+  ('Iniciante',                       '#737373', null::text, 0),
   ('Branco ponta vermelha',          '#F5F5F5', '#C92A2A',  1),
   ('Vermelho',                       '#C92A2A', null::text, 2),
   ('Vermelho ponta azul-claro',      '#C92A2A', '#38BDF8',  3),

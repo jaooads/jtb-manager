@@ -4,7 +4,7 @@ begin
   if exists (
     select 1
     from public.graduations
-    where lower(trim(name)) in ('iniciante', 'iniciante (sem prajied)')
+    where lower(trim(name)) = 'iniciante'
   ) then
     return;
   end if;
@@ -23,7 +23,7 @@ begin
     sort_order,
     is_active
   ) values (
-    'Iniciante (sem Prajied)',
+    'Iniciante',
     '#737373',
     null,
     0,

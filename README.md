@@ -28,7 +28,7 @@ Execute depois `202611150004_financial.sql` para ativar configurações financei
 
 Se a carga inicial de Prajieds já tiver sido executada, aplique também `202611150005_remove_white_graduation.sql` para excluir o Prajied Branco sem ponta.
 
-Execute `202611150007_add_beginner_graduation.sql` para adicionar **Iniciante (sem Prajied)** como primeira opção dos alunos ainda não graduados.
+Execute `202611150007_add_beginner_graduation.sql` para adicionar **Iniciante** como primeira opção dos alunos ainda não graduados.
 
 O dashboard, os relatórios por período e o lembrete de aniversários de hoje e dos próximos sete dias fazem parte da Etapa 4.
 
