@@ -1,5 +1,5 @@
 import { supabase } from '../lib/supabase/client'
-import type { Graduation, GraduationHistory, MonthlyPayment, PaymentDisplayStatus, PaymentMethod, PaymentRecord, Student, StudentStatus, StudentStatusHistory, SystemSettings } from '../types/domain'
+import type { AdminProfile, Graduation, GraduationHistory, MonthlyPayment, PaymentDisplayStatus, PaymentMethod, PaymentRecord, Student, StudentStatus, StudentStatusHistory, SystemSettings } from '../types/domain'
 
 function db() {
   if (!supabase) throw new Error('Supabase não configurado.')
@@ -13,6 +13,22 @@ export const academyKeys = {
   settings: ['system-settings'] as const,
   payments: ['monthly-payments'] as const,
   paymentRecords: ['payment-records'] as const,
+  adminProfile: ['admin-profile'] as const,
+}
+
+export async function getAdminProfile(): Promise<AdminProfile> {
+  const { data, error } = await db().from('admin_profiles').select('*').single()
+  if (error) throw error
+  return data as AdminProfile
+}
+
+export async function updateAdminDisplayName(displayName: string) {
+  const name = displayName.trim()
+  if (!name || name.length > 80) throw new Error('Nome de exibição inválido.')
+  const { data: authData, error: authError } = await db().auth.getUser()
+  if (authError || !authData.user) throw authError ?? new Error('Usuário não autenticado.')
+  const { error } = await db().from('admin_profiles').update({ display_name: name }).eq('user_id', authData.user.id)
+  if (error) throw error
 }
 
 export async function listGraduations(): Promise<Graduation[]> {
